@@ -1003,7 +1003,7 @@ def load_model():
     # 4. DOWNLOAD MODEL JIKA BELUM ADA DI FOLDER
     if not os.path.exists(MODEL_PATH):
         # GANTI URL INI DENGAN LINK GITHUB RELEASE MILIKMU NANTI:
-        DOWNLOAD_URL = "https://github.com/username/nama-repo/releases/download/v1.0/faster_rcnn_best.pth"
+        DOWNLOAD_URL = "https://github.com/Adyanullah/LeafVision/releases/download/V1.0/faster_rcnn_best.pth"
         
         with st.spinner("Mengunduh bobot model dari server... Mohon tunggu sebentar."):
             try:
