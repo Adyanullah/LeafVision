@@ -10,6 +10,7 @@ from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 from torchvision.transforms import functional as F
 from PIL import Image
 import cv2
+import urllib.request
 # ─────────────────────────────────────────────
 # 1. PAGE CONFIG
 # ─────────────────────────────────────────────
@@ -992,17 +993,28 @@ def load_model():
     in_features = model.roi_heads.box_predictor.cls_score.in_features
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
     
-    # 3. Lacak path secara absolut
+    # 3. Lacak path secara absolut & pastikan folder models ada
     BASE_DIR = os.path.dirname(os.path.abspath(__file__)) 
-    MODEL_PATH = os.path.join(BASE_DIR, "models", "faster_rcnn_best.pth")
+    MODEL_DIR = os.path.join(BASE_DIR, "models")
+    os.makedirs(MODEL_DIR, exist_ok=True) 
     
+    MODEL_PATH = os.path.join(MODEL_DIR, "faster_rcnn_best.pth")
+    
+    # 4. DOWNLOAD MODEL JIKA BELUM ADA DI FOLDER
     if not os.path.exists(MODEL_PATH):
-        raise FileNotFoundError(f"File model tidak ditemukan di: {MODEL_PATH}")
+        # GANTI URL INI DENGAN LINK GITHUB RELEASE MILIKMU NANTI:
+        DOWNLOAD_URL = "https://github.com/username/nama-repo/releases/download/v1.0/faster_rcnn_best.pth"
+        
+        with st.spinner("Mengunduh bobot model dari server... Mohon tunggu sebentar."):
+            try:
+                urllib.request.urlretrieve(DOWNLOAD_URL, MODEL_PATH)
+            except Exception as e:
+                raise RuntimeError(f"Gagal mengunduh model. Pastikan URL benar dan ada koneksi internet. Error: {e}")
     
-    # 4. Load file .pth
+    # 5. Load file .pth
     checkpoint = torch.load(MODEL_PATH, map_location=torch.device('cpu'))
     
-    # 5. Cek apakah ini Checkpoint Dictionary atau Raw Weights, lalu load dengan benar
+    # 6. Cek apakah ini Checkpoint Dictionary atau Raw Weights, lalu load dengan benar
     if 'model_state_dict' in checkpoint:
         model.load_state_dict(checkpoint['model_state_dict']) # Ekstrak hanya bobotnya
     else:
