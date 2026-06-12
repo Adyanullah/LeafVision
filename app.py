@@ -101,14 +101,32 @@ st.markdown("""
 /* ══════════════════════════════════════════════
    CUSTOM SCROLLBAR
    ══════════════════════════════════════════════ */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(--green-mist); }
+[data-testid="stAppViewContainer"]::-webkit-scrollbar,
+[data-testid="stSidebar"]::-webkit-scrollbar,
+::-webkit-scrollbar { 
+    width: 6px; /* Sedikit diperlebar agar nyaman diklik */
+    height: 6px; 
+}
+
+[data-testid="stAppViewContainer"]::-webkit-scrollbar-track,
+[data-testid="stSidebar"]::-webkit-scrollbar-track,
+::-webkit-scrollbar-track { 
+    background: var(--green-mist); 
+}
+
+[data-testid="stAppViewContainer"]::-webkit-scrollbar-thumb,
+[data-testid="stSidebar"]::-webkit-scrollbar-thumb,
 ::-webkit-scrollbar-thumb {
     background: var(--green-light);
     border-radius: 99px;
+    border: 2px solid var(--green-mist); /* Memberi efek jarak (padding) semu */
 }
-::-webkit-scrollbar-thumb:hover { background: var(--green-primary); }
 
+[data-testid="stAppViewContainer"]::-webkit-scrollbar-thumb:hover,
+[data-testid="stSidebar"]::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:hover { 
+    background: var(--green-primary); 
+}
 /* ══════════════════════════════════════════════
    BASE RESET
    ══════════════════════════════════════════════ */
@@ -199,6 +217,8 @@ header { background: transparent !important; }
     gap: 4px;
     display: flex;
     flex-direction: column;
+    width: 100% !important;
+    align-items: stretch !important;
 }
 
 [data-testid="stSidebar"] .stRadio div[role="radiogroup"] label {
