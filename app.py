@@ -926,7 +926,7 @@ with st.sidebar:
     # Footer
     st.markdown("""
     <div class="sidebar-footer">
-        <p>Proyek MBKM • Computer Vision<br>Faster R-CNN + ResNet-50</p>
+        <p>Oleh:<br>• Prof. Dr. Rima Tri Wahyuningrum, ST, MT <br>• Adyan Bhagaskara <br>Prodi: <br>S1 Teknik Informatika dan S2 PSDA Universitas Trunodjoyo Madura</p>
     </div>
     """, unsafe_allow_html=True)
 
