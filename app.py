@@ -213,6 +213,15 @@ header { background: transparent !important; }
     width: 100% !important;
 }
 
+[data-testid="stSidebar"] .stRadio {
+    width: 100% !important;
+}
+
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"],
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] label {
+    width: 100% !important;
+}
+
 [data-testid="stSidebar"] div[role="radiogroup"] > label > div:first-child {
     display: none !important;
 }
