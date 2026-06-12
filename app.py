@@ -255,7 +255,13 @@ header { background: transparent !important; }
 /* ══════════════════════════════════════════════
    TYPOGRAPHY — Main Content
    ══════════════════════════════════════════════ */
-.main h1, .main h2, .main h3, .main h4, .main h5, .main h6 {
+h1, h2, h3, h4, h5, h6,
+[data-testid="stMarkdownContainer"] h1,
+[data-testid="stMarkdownContainer"] h2,
+[data-testid="stMarkdownContainer"] h3,
+[data-testid="stMarkdownContainer"] h4,
+[data-testid="stMarkdownContainer"] h5,
+[data-testid="stMarkdownContainer"] h6 {
     color: var(--green-dark) !important;
 }
 
@@ -643,12 +649,12 @@ pre code {
 /* ══════════════════════════════════════════════
    SECTION DIVIDER
    ══════════════════════════════════════════════ */
-.section-divider {
-    height: 1px;
-    background: linear-gradient(to right, var(--green-primary), var(--border), transparent);
-    margin: 2.25rem 0;
-    border: none;
-    opacity: 0.6;
+hr.section-divider {
+    height: 1px !important;
+    background: linear-gradient(to right, var(--green-primary), var(--green-light), transparent) !important;
+    margin: 2.25rem 0 !important;
+    border: none !important;
+    opacity: 0.8 !important;
 }
 
 /* ══════════════════════════════════════════════
