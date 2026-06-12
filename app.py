@@ -209,9 +209,8 @@ header { background: transparent !important; }
 }
 
 /* ── Sidebar Radio Navigation ── */
-[data-testid="stSidebar"] .stRadio div[role="radiogroup"] > * {
+[data-testid="stSidebar"] [data-testid="stElementContainer"]:has(.stRadio) {
     width: 100% !important;
-    max-width: 100% !important;
 }
 
 [data-testid="stSidebar"] div[role="radiogroup"] > label > div:first-child {
