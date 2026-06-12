@@ -264,6 +264,12 @@ h1, h2, h3, h4, h5, h6,
 [data-testid="stMarkdownContainer"] h6 {
     color: var(--green-dark) !important;
 }
+[data-testid="stMarkdownContainer"] p, 
+# [data-testid="stMarkdownContainer"] span,
+[data-testid="stMarkdownContainer"] li 
+            {
+    color: var(--green-dark) !important;
+}
 
 /* ══════════════════════════════════════════════
    PAGE HEADER
