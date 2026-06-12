@@ -1,4 +1,5 @@
 [theme]
+base="light"
 # Warna aksen utama (untuk tombol, slider, dll)
 primaryColor = "#73AA4E"
 
