@@ -264,13 +264,11 @@ h1, h2, h3, h4, h5, h6,
 [data-testid="stMarkdownContainer"] h6 {
     color: var(--green-dark) !important;
 }
-[data-testid="stMarkdownContainer"] p, 
-# [data-testid="stMarkdownContainer"] span,
-[data-testid="stMarkdownContainer"] li 
-            {
+            
+[data-testid="stMetricLabel"],
+[data-testid="stMetricLabel"] * {
     color: var(--green-dark) !important;
 }
-
 /* ══════════════════════════════════════════════
    PAGE HEADER
    ══════════════════════════════════════════════ */
@@ -1369,7 +1367,7 @@ elif menu == "Simulasi Deteksi":
         "Unggah gambar daun untuk menguji model Faster R-CNN secara langsung."
     )
 
-    info_box("📌 Unggah gambar daun jagung atau padi (format JPG/PNG). Model akan melakukan inferensi dan menampilkan bounding box beserta label prediksi.")
+    info_box("📌 Unggah gambar daun jagung (format JPG/PNG). Model akan melakukan inferensi dan menampilkan bounding box beserta label prediksi.")
 
     uploaded_file = st.file_uploader(
         "Seret & lepas gambar di sini, atau klik untuk memilih",
@@ -1471,7 +1469,7 @@ elif menu == "Kesimpulan & Saran":
     <div class="conclusion-card">
         <h2>Kesimpulan Penelitian</h2>
         <p>
-        Model Faster R-CNN dengan backbone ResNet-50 dan FPN berhasil mendeteksi penyakit daun jagung dan padi 
+        Model Faster R-CNN dengan backbone ResNet-50 dan FPN berhasil mendeteksi penyakit daun jagung 
         berdasarkan {DATA_PROYEK['dataset']['total_gambar']:,} citra uji dengan performa yang sangat memuaskan, mencapai <strong style="color:#D4EDBA;">mAP@50 sebesar {DATA_PROYEK['evaluasi']['map_50']}</strong> 
         pada data validasi. Sistem ini terbukti mampu melokalisasi area penyakit secara spasial dengan precision {DATA_PROYEK['evaluasi']['precision']} 
         dan recall {DATA_PROYEK['evaluasi']['recall']}, menjadikannya solusi yang andal untuk identifikasi dini di lapangan menggunakan training selama {DATA_PROYEK['training']['epochs']} epochs.
