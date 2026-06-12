@@ -821,15 +821,20 @@ hr.section-divider {
    SIDEBAR TOGGLE ICON
    ══════════════════════════════════════════════ */
 [data-testid="collapsedControl"] {
-    color: var(--green-dark) !important;
     background-color: var(--green-mist) !important;
-    border: 1px solid var(--border) !important;
+    border: 1px solid var(--border-strong) !important;
     border-radius: 8px !important;
+    color: var(--green-dark) !important;
 }
 
 [data-testid="collapsedControl"] svg {
     fill: var(--green-dark) !important;
     color: var(--green-dark) !important;
+}
+            
+[data-testid="collapsedControl"]:hover {
+    background-color: var(--green-pale) !important;
+    border-color: var(--green-primary) !important;
 }
 
 /* ══════════════════════════════════════════════
@@ -1339,24 +1344,24 @@ elif menu == "Evaluasi":
     #     """, unsafe_allow_html=True)
 
     # divider()
-    st.markdown("### Training Loss Curve")
-    try:
-        # Mengambil gambar langsung dari folder assets
-        st.image("assets/training_loss.png", use_column_width=True)
-    except FileNotFoundError:
-        st.markdown("""
-                <div style="background:#fff;border:1px solid var(--border);border-radius:16px;
-                            height:260px;display:flex;align-items:center;justify-content:center;
-                            color:var(--text-light);text-align:center;padding:2rem;">
-                    <div>
-                        <div style="font-size:2rem;margin-bottom:0.75rem;">📉</div>
-                        <div style="font-size:0.9rem;color:var(--text-mid);font-weight:500;">Loss Curve Tidak Ditemukan</div>
-                        <div style="font-size:0.8rem;color:var(--text-light);margin-top:0.3rem;">
-                            Pastikan file <code>training_loss.png</code><br>sudah ada di dalam folder <code>assets</code>
-                        </div>
-                    </div>
-                </div>
-                """, unsafe_allow_html=True)
+    # st.markdown("### Training Loss Curve")
+    # try:
+    #     # Mengambil gambar langsung dari folder assets
+    #     st.image("assets/training_loss.png", use_column_width=True)
+    # except FileNotFoundError:
+    #     st.markdown("""
+    #             <div style="background:#fff;border:1px solid var(--border);border-radius:16px;
+    #                         height:260px;display:flex;align-items:center;justify-content:center;
+    #                         color:var(--text-light);text-align:center;padding:2rem;">
+    #                 <div>
+    #                     <div style="font-size:2rem;margin-bottom:0.75rem;">📉</div>
+    #                     <div style="font-size:0.9rem;color:var(--text-mid);font-weight:500;">Loss Curve Tidak Ditemukan</div>
+    #                     <div style="font-size:0.8rem;color:var(--text-light);margin-top:0.3rem;">
+    #                         Pastikan file <code>training_loss.png</code><br>sudah ada di dalam folder <code>assets</code>
+    #                     </div>
+    #                 </div>
+    #             </div>
+    #             """, unsafe_allow_html=True)
 
 
 # ── SIMULASI DETEKSI ──
