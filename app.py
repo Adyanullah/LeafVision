@@ -127,7 +127,11 @@ html, body, [class*="css"] {
 }
 
 /* ── Hide Streamlit Branding ── */
-#MainMenu, footer, header { visibility: hidden; }
+#MainMenu, footer { visibility: hidden; }
+header { background: transparent !important; }
+
+/* Sembunyikan tombol Deploy bawaan Streamlit Cloud */
+[data-testid="stAppDeployButton"] { display: none !important; }
 
 /* ── Main content padding ── */
 .block-container {
@@ -1038,7 +1042,7 @@ if menu == "Business Understanding":
 
     card(
         "Konteks Permasalahan",
-        "Penyakit pada daun jagung dan padi merupakan salah satu faktor utama penyebab penurunan hasil panen dan kerugian finansial bagi petani Indonesia. Identifikasi manual membutuhkan keahlian khusus dan memakan waktu, sehingga diperlukan solusi berbasis teknologi."
+        "Penyakit pada daun jagung merupakan salah satu faktor utama penyebab penurunan hasil panen dan kerugian finansial bagi petani Indonesia. Identifikasi manual membutuhkan keahlian khusus dan memakan waktu, sehingga diperlukan solusi berbasis teknologi."
     )
 
     info_box(
