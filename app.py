@@ -209,10 +209,13 @@ header { background: transparent !important; }
 }
 
 /* ── Sidebar Radio Navigation ── */
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] > * {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
 [data-testid="stSidebar"] div[role="radiogroup"] > label > div:first-child {
     display: none !important;
-    width: 100% !important;
-    align-items: stretch !important;
 }
 
 [data-testid="stSidebar"] .stRadio div[role="radiogroup"] {
