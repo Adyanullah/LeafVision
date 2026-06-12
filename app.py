@@ -211,14 +211,14 @@ header { background: transparent !important; }
 /* ── Sidebar Radio Navigation ── */
 [data-testid="stSidebar"] div[role="radiogroup"] > label > div:first-child {
     display: none !important;
+    width: 100% !important;
+    align-items: stretch !important;
 }
 
 [data-testid="stSidebar"] .stRadio div[role="radiogroup"] {
     gap: 4px;
     display: flex;
     flex-direction: column;
-    width: 100% !important;
-    align-items: stretch !important;
 }
 
 [data-testid="stSidebar"] .stRadio div[role="radiogroup"] label {
