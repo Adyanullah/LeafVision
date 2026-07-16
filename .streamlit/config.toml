@@ -1,0 +1,17 @@
+[theme]
+base="light"
+# Warna aksen utama (untuk tombol, slider, dll)
+primaryColor = "#73AA4E"
+
+# Warna latar belakang utama aplikasi
+backgroundColor = "#FFFFFF"
+
+# Warna latar belakang sekunder (untuk sidebar dan area input)
+# Ini adalah hijau yang sangat muda/pudar agar cocok dengan tema
+secondaryBackgroundColor = "#F2F7EF"
+
+# Warna teks utama (menggunakan hijau gelap agar elegan)
+textColor = "#2A5934"
+
+# Jenis huruf
+font = "sans serif"
